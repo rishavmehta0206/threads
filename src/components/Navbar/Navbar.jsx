@@ -1,9 +1,21 @@
-import { ChevronDown, Heart, ShoppingCart, UserRound } from "lucide-react";
-import React from "react";
+import {
+  ChevronDown,
+  Heart,
+  ShoppingCart,
+  UserRound,
+  Search,
+} from "lucide-react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
+import Cart from "../Cart/Cart";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const products = useSelector((state) => state.cart.products);
+
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -22,25 +34,25 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="item">
-            <Link className="link" to="/products/1">
+            <Link className="link" to="/products/2">
               Men
             </Link>
           </div>
           <div className="item">
-            <Link className="link" to="/products/1">
-              Kids
+            <Link className="link" to="/products/3">
+              Children
             </Link>
           </div>
         </div>
         <div className="center">
           <Link className="link" to="/">
-            THREADS
+            LAMASTORE
           </Link>
         </div>
         <div className="right">
           <div className="item">
             <Link className="link" to="/">
-              Home
+              Homepage
             </Link>
           </div>
           <div className="item">
@@ -59,16 +71,17 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="icons">
-            <Heart />
+            <Search/>
             <UserRound />
             <Heart />
-            <div className="cartIcon">
+            <div className="cartIcon" onClick={() => setOpen(!open)}>
               <ShoppingCart />
-              <span>0</span>
+              <span>{products.length}</span>
             </div>
           </div>
         </div>
       </div>
+      {open && <Cart />}
     </div>
   );
 };
