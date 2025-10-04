@@ -8,7 +8,6 @@ import {
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
-import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
@@ -46,13 +45,13 @@ const Navbar = () => {
         </div>
         <div className="center">
           <Link className="link" to="/">
-            LAMASTORE
+            THREADS
           </Link>
         </div>
         <div className="right">
           <div className="item">
             <Link className="link" to="/">
-              Homepage
+              Home
             </Link>
           </div>
           <div className="item">
@@ -74,14 +73,13 @@ const Navbar = () => {
             <Search/>
             <UserRound />
             <Heart />
-            <div className="cartIcon" onClick={() => setOpen(!open)}>
+            <Link className="cartIcon link" to="/cart">
               <ShoppingCart />
               <span>{products.length}</span>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
-      {open && <Cart />}
     </div>
   );
 };

@@ -1,0 +1,121 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.4;
+}
+
+.checkout-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f9fc;
+}
+
+.checkout-card {
+  position: relative;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 500px;
+  .close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #666;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.checkout-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.summary {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+
+  .summary-item,
+  .summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .summary-total {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+}
+
+.payment-form {
+  .form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    input {
+      padding: 0.6rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+
+      &:focus {
+        border-color: #635bff;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.2);
+      }
+    }
+  }
+
+  .form-row {
+    display: flex;
+    gap: 1rem;
+
+    .half {
+      flex: 1;
+    }
+  }
+
+  .pay-btn {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    background: #635bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #4b3cff;
+    }
+  }
+}
